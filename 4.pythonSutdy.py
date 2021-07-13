@@ -1,1 +1,2 @@
 C = "hoge"
+print(c)
