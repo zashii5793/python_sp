@@ -1,3 +1,3 @@
 C = "hoge"
 print(c)
-10 > 1
+if 10 > 1
