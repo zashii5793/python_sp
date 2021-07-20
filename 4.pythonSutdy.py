@@ -1,8 +1,4 @@
-from typing import Counter
-
-
-counter = 0
-while counter < 10:
-    print('スマッシュ')
-    counter = counter + 1
-    
+import random
+attacks = ['ストローク', 'ボレー', 'スマッシュ', 'ロブ']
+for count in range(5):
+    print(random.choice(attacks))
