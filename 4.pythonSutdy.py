@@ -1,22 +1,35 @@
-import random
-attacks = ['ストローク', 'ボレー', 'スマッシュ', 'ロブ']
-for count in range(5):
-    print(random.choice(attacks))
+class Michael:
+    def __init__(self, max = 5, count = 0) -> None:
+        self.max = max
+        self.count = count
 
-sound = {
-    'A' : 'a',
-    'B' : 'b',
-    'C' : 'c',
-    'D' : 'd',
-    'E' : 'e',
-    'F' : 'f',
-}
-for key, value in sound.items():
-    print(key, value)
+    def get_max(self):
+        return self.__max
 
-def sequence_sound(* args):
-    for s in (args):
-        print(s)
-    return s
+    def get_count(self):
+        return self.__count 
 
-sequence_sound('えい','やあ','おい')    
+    def set_max(self, max):
+        self.__max = max
+
+    def set_count(self,  count):
+        self.__count = count           
+
+    max = property(get_max, set_max)
+    count = property(get_count, set_count)    
+
+    def teach(self):
+        if self.count < self.max:
+            print('もっと強く')
+        else:
+            print('よっしオッケーだ')
+        self.count += 1
+
+
+oni = Michael()
+
+oni.count = 1
+
+for i in range(5):
+    print('スマッシュ')
+    oni.teach()
