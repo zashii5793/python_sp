@@ -28,7 +28,7 @@ class Responder:
 while True:
     inputs = input(' > ')
     if not inputs:
-      print('バイバイ')
+      print('OK')
       break
     response = ptna.dialogue(inputs)
     print(prompt(ptna), response)
