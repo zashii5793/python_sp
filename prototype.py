@@ -19,11 +19,11 @@ class Responder:
     def response(self, input):
         return '{}ってなに？'.format(input)
 
-    def prompt(obj):
-        return obj.get_name() + ":" + obj.get_responder_name() + '> '
+def prompt(obj):
+    return obj.get_name() + ":" + obj.get_responder_name() + '> '
     
-    print('Ptna System prototype : ptna')
-    ptna = Ptna('ptna')
+print('Ptna System prototype : ptna')
+ptna = Ptna('ptna')
 
 while True:
     inputs = input(' > ')
