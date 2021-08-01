@@ -9,3 +9,18 @@ class Responder:
     def response(self, input):
         return ''
 
+    def get_name(self):
+        return self.name
+
+class RepeatResponder(Responder):
+    def response(self, input):
+        return '{}ってなに？'.format(input)
+
+class RandomResponder(Responder):
+    def __init__(self, name):
+        super().__init__(name)
+        self.response = ['いい天気だね', '君はアンビリバボー', '10円ひろった']
+
+    def response(self, input):
+        return (random.choice(self.response))  
+          
