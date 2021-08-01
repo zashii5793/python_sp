@@ -1,7 +1,10 @@
+from responder import *
+
+
 class Ptna:
     def __init__(self, name):
       self.name = name
-      self.responder = Responder('What')
+      self.responder = RandomResponder('Random')
 
     def dialogue(self, input):
         return self.responder.response(input)

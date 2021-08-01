@@ -19,8 +19,8 @@ class RepeatResponder(Responder):
 class RandomResponder(Responder):
     def __init__(self, name):
         super().__init__(name)
-        self.response = ['いい天気だね', '君はアンビリバボー', '10円ひろった']
+        self.responses = ['いい天気だね', '君はアンビリバボー', '10円ひろった']
 
     def response(self, input):
-        return (random.choice(self.response))  
-          
+        return (random.choice(self.responses))  
+
