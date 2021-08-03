@@ -24,4 +24,22 @@ def taik():
     response_area.configure(text='なに？')
     else:
         response = ptna.dialogue(value)
-        response
+        response_area.configure(text=response)
+        putlog('>' + value)
+        putlog(prompt() + response)
+        entry.delete(0, tk.END)
+
+ def run():
+     global entry, response_area, lb, action
+
+     root = tk.TK() 
+     root.geometry('880x560') 
+     root.title('Intelligent Agent : ') 
+     font=('Helevtetica', 14) 
+     font_log=('Helevtetica', 11)
+
+     menubar = tk.Menu(root)
+     root.config(menu=menubar)
+     filemenu = tk.Menu(menubar)
+     menubar.add_cascade(label='ファイル', menu=filemenu)
+     filemenu.add_command(label='閉じる', command=root.destroy)   
