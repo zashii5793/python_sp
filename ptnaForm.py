@@ -43,3 +43,49 @@ def taik():
      filemenu = tk.Menu(menubar)
      menubar.add_cascade(label='ファイル', menu=filemenu)
      filemenu.add_command(label='閉じる', command=root.destroy)   
+     action = tk.IntVar()
+     optionmenu = tk.Menu(menubar)
+     menubar.add_cascade(label='オプション', menu=optionmenu)
+     optionmenu.add_radiobutton(
+         label='Responderを表示',
+         variable = action
+         value = 0
+     )
+     optionmenu.add_radiobutton(
+         label='Responderを表示しない',
+         variable = action
+         value = 1
+
+     )
+     canvas = tk.Canvas(
+         root,
+         width = 500,
+         height = 300,
+         relief = tk.RIDGE,
+         bd = 2
+     )
+     canvas.place(x=370, y=0)
+
+     img = tk.PhotoImage(file = 'img1.gif')
+     canvas.create_image(
+         0,
+         0,
+         image = img,
+         anchor = tk.NW
+     )
+
+     response_area = tk.Label(
+         root,
+         width = 50,
+         height = 10,
+         bg = 'yellow',
+         font = font,
+         relief = tk.RIDGE,
+         bd = 2
+     )
+     response_area.place(x = 370, y = 305)
+
+     
+
+
+
