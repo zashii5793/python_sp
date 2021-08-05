@@ -85,7 +85,48 @@ def taik():
      )
      response_area.place(x = 370, y = 305)
 
-     
+     frame = tk.Frame(
+         root,
+         relief=tk.RIDGE,
+         borderwidth=4
+     )
+     entry = tk.Entry(
+         frame,
+         width=70,
+         font=font
+     )
+     entry.pack(side = tk.LEFT)
+     entry.focus_set()
+
+     button = tk.Button(
+         frame,
+         width=15,
+         text = '話す',
+         command = taik
+     )
+     button.pack(side = tk.LEFT)
+     frame.place(x=30, y=520)
+
+     lb = tk.Listbox(
+         root,
+         width=42,
+         height=30,
+         font=font_log
+     )
+     sb1 = tk.Scrollbar(
+         root,
+         orient= tk.VERTICAL,
+         command= = lb.tk.YView
+        )
+
+     sb2 = tk.Scrollbar(
+         root,
+         orient= tk.VERTICAL,
+         command= = lb.tk.YView
+         )
+
+
+
 
 
 
