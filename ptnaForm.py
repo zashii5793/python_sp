@@ -20,8 +20,7 @@ def taik():
     value = entry.get()
 
     if not value:
-
-    response_area.configure(text='なに？')
+        response_area.configure(text='なに？')
     else:
         response = ptna.dialogue(value)
         response_area.configure(text=response)
@@ -29,7 +28,7 @@ def taik():
         putlog(prompt() + response)
         entry.delete(0, tk.END)
 
- def run():
+def run():
      global entry, response_area, lb, action
 
      root = tk.TK() 
@@ -48,14 +47,13 @@ def taik():
      menubar.add_cascade(label='オプション', menu=optionmenu)
      optionmenu.add_radiobutton(
          label='Responderを表示',
-         variable = action
+         variable = action,
          value = 0
      )
      optionmenu.add_radiobutton(
          label='Responderを表示しない',
-         variable = action
+         variable = action,
          value = 1
-
      )
      canvas = tk.Canvas(
          root,
@@ -99,34 +97,39 @@ def taik():
      entry.focus_set()
 
      button = tk.Button(
-         frame,
-         width=15,
-         text = '話す',
-         command = taik
-     )
+                frame,
+                width=15,
+                text = '話す',
+                command = taik
+             )
+
      button.pack(side = tk.LEFT)
      frame.place(x=30, y=520)
 
      lb = tk.Listbox(
-         root,
-         width=42,
-         height=30,
-         font=font_log
-     )
+            root,
+            width=42,
+            height=30,
+            font=font_log
+          )
      sb1 = tk.Scrollbar(
          root,
          orient= tk.VERTICAL,
-         command= = lb.tk.YView
-        )
-
+         command=  lb.tk.YView
+           )
      sb2 = tk.Scrollbar(
          root,
          orient= tk.VERTICAL,
-         command= = lb.tk.YView
-         )
+         command=  lb.tk.YView
+        )
 
+     lb.configure(yscrollcommand = sb1.set)
+     lb.configure(xscrollcommand = sb2.set)
+     lb.grid(row = 0, column = 0)
+     sb1.grid(row = 0, column = 1, sticky = tk.NS)
+     sb2.grid(row = 1, column = 0, sticky = tk.EW)
 
+     root.mainloop()
 
-
-
-
+if __name__ == '__main__':
+    run()
