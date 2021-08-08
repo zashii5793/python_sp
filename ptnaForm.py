@@ -31,7 +31,7 @@ def taik():
 def run():
      global entry, response_area, lb, action
 
-     root = tk.TK() 
+     root = tk.Tk() 
      root.geometry('880x560') 
      root.title('Intelligent Agent : ') 
      font=('Helevtetica', 14) 
@@ -115,12 +115,12 @@ def run():
      sb1 = tk.Scrollbar(
          root,
          orient= tk.VERTICAL,
-         command=  lb.tk.YView
+         command=  lb.yview
            )
      sb2 = tk.Scrollbar(
          root,
          orient= tk.VERTICAL,
-         command=  lb.tk.YView
+         command=  lb.xview
         )
 
      lb.configure(yscrollcommand = sb1.set)

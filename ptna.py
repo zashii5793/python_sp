@@ -1,6 +1,6 @@
 from responder import *
 
-class ptna:
+class Ptna:
     def __init__(self, name):
         self.name = name
         self.responder = RandomResponder('Random')
