@@ -24,3 +24,17 @@ class RandomResponder(Responder):
     def response(self, input):
         return (random.choice(self.responses))  
 
+class RandomResponder(Responder):
+    def __init__(self, name):
+        super().__init__(name)
+        self.responses = []
+        rfile = open('random.txt','r',encoding= 'utf-8')
+        rfile.close()
+        for line in r_lines:
+            str = line.rstrip('¥n')
+            if (str!=''):
+                self.responses.append(str)
+
+    def response(self, input):
+        return random.choice(self.responses)
+        
