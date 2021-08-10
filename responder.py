@@ -19,16 +19,9 @@ class RepeatResponder(Responder):
 class RandomResponder(Responder):
     def __init__(self, name):
         super().__init__(name)
-        self.responses = ['いい天気だね', '君はアンビリバボー', '10円ひろった']
-
-    def response(self, input):
-        return (random.choice(self.responses))  
-
-class RandomResponder(Responder):
-    def __init__(self, name):
-        super().__init__(name)
         self.responses = []
         rfile = open('random.txt','r',encoding= 'utf-8')
+        r_lines = rfile.readlines()
         rfile.close()
         for line in r_lines:
             str = line.rstrip('¥n')
@@ -37,4 +30,3 @@ class RandomResponder(Responder):
 
     def response(self, input):
         return random.choice(self.responses)
-        
