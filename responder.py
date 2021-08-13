@@ -25,4 +25,12 @@ class RandomResponder(Responder):
 
 class PatternResponder(Responder):
     def response(self, input):
-        
+    for ptn, prs in zip(
+        self.dictionary.pattern['pattern'],
+        self.dictionary.pattern['phrases']
+    ):
+    m = re.search(ptn, input)
+    if m:
+        resp = random.choice(prs.split('|'))
+        return re.sub('%match%', m.group(), resp)
+    return random.choice(self.dictionary.random) 
