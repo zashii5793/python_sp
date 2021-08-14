@@ -5,10 +5,10 @@ class Dictionary:
         r_lines = rfile.readlines()
         rfile.close()
 
-        self.random = []
         for line in r_lines:
             str = line.rstrip('¥n')
-            if (str! = ''):
+
+            if (str!= ''):
                 self.random.append(str)
 
         pfile = open('pattern.txt', 'r', encoding='utf-8')
@@ -19,8 +19,9 @@ class Dictionary:
             str = line.rstrip('¥n')
             if (str!=''):
                 self.new_lines.append(str)
+
         self.pattern = {}
         for line in self.new_lines:
-            ptn, prs = line.split('¥t')
+            ptn, prs = line.split('\t')
             self.pattern.setdefault('pattern',[]).append(ptn)
             self.pattern.setdefault('phrases',[]).append(ptn)
