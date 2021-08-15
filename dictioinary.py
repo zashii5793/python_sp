@@ -22,6 +22,6 @@ class Dictionary:
 
         self.pattern = {}
         for line in self.new_lines:
-            ptn, prs = line.split('\t')
+            ptn, prs = line.split()
             self.pattern.setdefault('pattern',[]).append(ptn)
             self.pattern.setdefault('phrases',[]).append(ptn)
