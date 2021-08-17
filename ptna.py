@@ -13,6 +13,7 @@ class Ptna:
     def dialogue(self, input):
         x = random.randint(1, 100)
         if x <= 60:
+            
             self.responder = self.res_pattern
         elif 61 <= x <= 90:
             self.responder = self.res_random
@@ -45,7 +46,7 @@ class Emotion:
                 self.mood += Emotion.MOOD_RECOVERY
             elif self.mood > 0:
                 self.mood = Emotion.MOOD_RECOVERY
-                
+
     def adjust_mood(self, val):
         self.mood += int(val)
         if self.mood > Emotion.MOOD_MAX:
