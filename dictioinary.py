@@ -1,3 +1,6 @@
+import random
+import re
+
 class Dictionary:
     def __init__(self):
         self.random = []
@@ -20,8 +23,7 @@ class Dictionary:
             if (str!=''):
                 self.new_lines.append(str)
 
-        self.pattern = {}
+        self.pattern = []
         for line in self.new_lines:
-            ptn, prs = line.split()
-            self.pattern.setdefault('pattern',[]).append(ptn)
-            self.pattern.setdefault('phrases',[]).append(ptn)
+            ptn, prs = line.split('¥t')
+            self.pattern.append(ParseItem(ptn, prs))
