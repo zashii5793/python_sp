@@ -1,5 +1,6 @@
 import random
 import re
+from tkinter.constants import SEPARATOR
 
 class Dictionary:
     def __init__(self):
@@ -27,3 +28,10 @@ class Dictionary:
         for line in self.new_lines:
             ptn, prs = line.split('¥t')
             self.pattern.append(ParseItem(ptn, prs))
+
+class ParseItem:
+    SEPARATOR = '^((-?¥d+)##)?(.*)$'
+
+    def __init__(self, pattern, phrases):
+        m = re.findall(ParseItem.SEPARATOR, pattern)
+        self.modify = 0
