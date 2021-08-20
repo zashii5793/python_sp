@@ -35,3 +35,12 @@ class ParseItem:
     def __init__(self, pattern, phrases):
         m = re.findall(ParseItem.SEPARATOR, pattern)
         self.modify = 0
+
+        if m[0][1]:
+            self.modify = int(m[0][1]) 
+        self.pattern = m[0][2] 
+        self.phrases = []
+        self.dic = {}
+
+        for phrase in phrases.split('|'):
+              
