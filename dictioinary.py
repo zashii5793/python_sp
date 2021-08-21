@@ -27,7 +27,8 @@ class Dictionary:
         self.pattern = []
         for line in self.new_lines:
             ptn, prs = line.split('¥t')
-            self.pattern.append(ParseItem(ptn, prs))
+            self.pattern.setdefault('pattern', []).append(ptn)
+            self.pattern.setdefault('pattern', []).append(prs)
 
 class ParseItem:
     SEPARATOR = '^((-?¥d+)##)?(.*)$'
@@ -43,4 +44,4 @@ class ParseItem:
         self.dic = {}
 
         for phrase in phrases.split('|'):
-              
+
