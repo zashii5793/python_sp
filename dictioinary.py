@@ -44,4 +44,10 @@ class ParseItem:
         self.dic = {}
 
         for phrase in phrases.split('|'):
+            m = re.findall(ParseItem.SEPARATOR, phrase)
+            self.dic['need'] = 0
+            if m[0][1]:
+                self.dic['need'] = int(m[0][1])
+            self.dic['phrases'] = m[0][2]
+            self.phrases.append(self.dic.copy())
 
