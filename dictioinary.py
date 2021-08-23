@@ -50,4 +50,22 @@ class ParseItem:
                 self.dic['need'] = int(m[0][1])
             self.dic['phrases'] = m[0][2]
             self.phrases.append(self.dic.copy())
+    def match(self, str):
+        return re.search(self.pattern, str)
 
+    def choice(self, mood):
+        choices = []
+        for p in self.phrases:
+            if (self.suitable(p['need'], mood)):
+                choices.append(p['phrase'])
+        if (len(choices) == 0):
+            return None        
+        return random.choice(choices) 
+
+    def suitable(self, need, mood):
+        if (need == 0):
+            return True
+        elif (need > 0):
+            return (mood > need)
+        else:
+            return (mood < need) 
