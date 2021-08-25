@@ -21,6 +21,7 @@ class RandomResponder(Responder):
 
     def response(self, input):
         return random.choice(self.dictionary.random)
+        
 
 class PatternResponder(Responder):
     def response(self, input):
