@@ -31,7 +31,8 @@ class PatternResponder(Responder):
         ):
             m = re.search(ptn, input)
         if m:
-            resp = random.choice(prs.split('|'))
-            return re.sub('%match%', m.group(), resp)
+            self.resp = ptn_item.choice(mood)
+        if self.resp != None:
+            return re.sub('%match%', m.group(), self.resp)
 
         return random.choice(self.dictionary.random) 
