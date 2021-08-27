@@ -19,7 +19,7 @@ class Ptna:
             self.responder = self.res_random
         else:
             self.responder = self.res_What
-        return self.responder.response(input)
+        return self.responder.response(input, self.emotion.mood)
 
     def get_responder_name(self):
         return self.responder.name
