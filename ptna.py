@@ -6,6 +6,7 @@ class Ptna:
     def __init__(self, name):
         self.name = name
         self.dictionary = Dictionary()
+        self.emotion = Emotion(self.dictionary)
         self.res_random = RandomResponder('Random', self.dictionary)
         self.res_What = RepeatResponder('Repeat?', self.dictionary)
         self.res_pattern = PatternResponder('Pattern', self.dictionary)
