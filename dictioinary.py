@@ -18,6 +18,7 @@ class Dictionary:
         pfile = open('pattern.txt', 'r', encoding='utf-8')
         p_lines = pfile.readlines()
         pfile.close()
+        
         self.new_lines = []
         for line in p_lines:
             str = line.rstrip('¥n')
