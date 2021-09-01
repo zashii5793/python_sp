@@ -34,6 +34,7 @@ class RandomResponder(Responder):
             self.responses.append(str)
 
 
+
     def response(self, input):
         return random.choice(self.dictionary.random)
         
