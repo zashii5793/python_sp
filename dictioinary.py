@@ -18,7 +18,7 @@ class Dictionary:
         pfile = open('pattern.txt', 'r', encoding='utf-8')
         p_lines = pfile.readlines()
         pfile.close()
-        
+
         self.new_lines = []
         for line in p_lines:
             str = line.rstrip('¥n')
@@ -30,6 +30,17 @@ class Dictionary:
             ptn, prs = line.split('¥t')
             self.pattern.setdefault('pattern', []).append(ptn)
             self.pattern.setdefault('pattern', []).append(prs)
+    def study(self, input):
+        input = input.rstrip('¥n')
+        if not input in self.random:
+            self.random.append(input) 
+
+    def save(self):
+        for index, element in enumerate(self.random):
+            self.random[index] = element + '¥n'
+
+        with open('dics/random.txt', 'w', encoding = 'utf_8')  as f:
+            f.writelines(self.random)                  
 
 class ParseItem:
     SEPARATOR = '^((-?¥d+)##)?(.*)$'
