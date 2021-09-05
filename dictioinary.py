@@ -30,6 +30,7 @@ class Dictionary:
             ptn, prs = line.split('¥t')
             self.pattern.setdefault('pattern', []).append(ptn)
             self.pattern.setdefault('pattern', []).append(prs)
+
     def study(self, input):
         input = input.rstrip('¥n')
         if not input in self.random:
@@ -62,6 +63,7 @@ class ParseItem:
                 self.dic['need'] = int(m[0][1])
             self.dic['phrases'] = m[0][2]
             self.phrases.append(self.dic.copy())
+            
     def match(self, str):
         return re.search(self.pattern, str)
 
