@@ -19,14 +19,19 @@ class Ptna:
             self.responder = self.res_random
         else:
             self.responder = self.res_What
-        return self.responder.response(input, self.emotion.mood)
+
+        resp = self.responder.response(input, self.emotion.mood)
+        self.dictionary.study(input)
+        return resp
 
     def get_responder_name(self):
         return self.responder.name
 
     def get_name(self):
         return self.name
-        
+
+    def save(self):
+        self.dictionary.save()    
             
 class Emotion:
     MOOD_MIN = -15
