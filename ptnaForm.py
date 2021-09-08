@@ -1,11 +1,18 @@
 import tkinter as tk
+import tkinter.messagebox
+
 from ptna import *
+from datetime import datetime
+
 
 entry = None
 response_area = None
 lb = None
 action = None
 ptna = Ptna('ptna')
+on_canvas = None
+ptyna_images = []
+log = []
 
 def putlog(str):
     lb.insert(tk.END, str)
