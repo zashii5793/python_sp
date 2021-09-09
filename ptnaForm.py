@@ -16,6 +16,7 @@ log = []
 
 def putlog(str):
     lb.insert(tk.END, str)
+    log.append(str + '¥n')
 
 def prompt():
     p = ptna.get_name
