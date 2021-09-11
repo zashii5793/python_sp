@@ -36,8 +36,15 @@ def taik():
         putlog(prompt() + response)
         entry.delete(0, tk.END)
 
+def writrLog():
+    now = 'Ptna System Dialogue Log: ' + datetime.now().strftime('%Y-%m-%d %H:%m::%S' + '¥n')
+
+    log.insert(0, now)
+    with open('log.txt', 'a', encoding= 'utf_8') as f:
+        f.writelines(log)
+
 def run():
-     global entry, response_area, lb, action
+     global entry, response_area, lb, action,canvas, on_canvas, ptyna_images
 
      root = tk.Tk() 
      root.geometry('880x560') 
@@ -136,6 +143,7 @@ def run():
      lb.grid(row = 0, column = 0)
      sb1.grid(row = 0, column = 1, sticky = tk.NS)
      sb2.grid(row = 1, column = 0, sticky = tk.EW)
+
 
      root.mainloop()
 
