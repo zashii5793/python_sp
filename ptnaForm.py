@@ -78,8 +78,11 @@ def run():
          bd = 2
      )
      canvas.place(x=370, y=0)
+     ptyna_images.append(tk.PhotoImage(file = "taik.gif"))
+     ptyna_images.append(tk.PhotoImage(file = "empty.gif"))
+     ptyna_images.append(tk.PhotoImage(file = "angry.gif"))
+     ptyna_images.append(tk.PhotoImage(file = "happy.gif"))
 
-     img = tk.PhotoImage(file = 'img1.gif')
      canvas.create_image(
          0,
          0,
