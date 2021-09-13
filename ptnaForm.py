@@ -23,6 +23,23 @@ def prompt():
     if (action.get()) == 0:
         p += ':' + ptna.get_responder_name
 
+def chagImg(img):
+    canvas.itemconfig(
+        on_canvas,
+        image = ptyna_images[img]
+    )
+def change_looks():
+    em = ptna.emotion.mood
+    if -5 <= em = <= 5:
+        chagImg(0)
+    elif -10 <= em <= 5:
+        chagImg(1)
+    elif -15 <= em < -10:
+        chagImg(2)
+    elif 5 <= em <= 15:
+        chagImg(3)    
+
+
 def taik():
 
     value = entry.get()
@@ -35,6 +52,8 @@ def taik():
         putlog('>' + value)
         putlog(prompt() + response)
         entry.delete(0, tk.END)
+
+    change_looks()    
 
 def writrLog():
     now = 'Ptna System Dialogue Log: ' + datetime.now().strftime('%Y-%m-%d %H:%m::%S' + '¥n')
