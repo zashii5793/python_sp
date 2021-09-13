@@ -86,7 +86,7 @@ def run():
      canvas.create_image(
          0,
          0,
-         image = img,
+         image = ptyna_images[0],
          anchor = tk.NW
      )
 
