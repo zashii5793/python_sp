@@ -83,3 +83,16 @@ class ParseItem:
             return (mood > need)
         else:
             return (mood < need) 
+
+    def study(self, input):
+        input = input.restrip('¥n')
+        if not input in self.random:
+            self.random.append(input) 
+
+    def save(self):
+        for index, element in enumerate(self.random):
+            self.random[index] = element + '¥n'
+
+        with open('dics/random.txt', 'w', encoding= 'utf-8') as f:
+            f.writelines(self.random) 
+            
