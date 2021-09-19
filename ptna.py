@@ -13,7 +13,10 @@ class Ptna:
         self.res_pattern = PatternResponder('Pattern', self.dictionary)
 
     def dialogue(self, input):
+        self.emotion.update(input)
+        parts = analyze(input)
         x = random.randint(1, 100)
+
         if x <= 60:
             self.responder = self.res_pattern
         elif 61 <= x <= 90:
@@ -22,7 +25,7 @@ class Ptna:
             self.responder = self.res_What
 
         resp = self.responder.response(input, self.emotion.mood)
-        self.dictionary.study(input)
+        self.dictionary.study(input, parts)
         return resp
 
     def get_responder_name(self):
