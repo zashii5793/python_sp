@@ -1,5 +1,6 @@
 from responder import *
 from dictioinary import *
+from analyzer import *
 
 
 class Ptna:
