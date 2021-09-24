@@ -23,3 +23,11 @@ try :
   print(f' 計算結果: {10/num}')
 except ZeroDivisionError  as e:
   print(e)
+
+file = open('sample.txt')
+text = file.read()
+file.close()
+
+with open('sample.txt', 'r') as f:
+  txt = f.read()
+print(x)
