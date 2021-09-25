@@ -31,3 +31,10 @@ file.close()
 with open('sample.txt', 'r') as f:
   txt = f.read()
 print(x)
+
+
+import os
+
+for curDir, dirs, files in os.walk('.'):
+  for file in files:
+    print(f'{curDir}/{file}')
