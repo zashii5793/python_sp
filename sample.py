@@ -38,3 +38,11 @@ import os
 for curDir, dirs, files in os.walk('.'):
   for file in files:
     print(f'{curDir}/{file}')
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+data = np.random.randint(0, 50, size=(2, 100))    
