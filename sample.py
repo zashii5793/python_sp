@@ -46,3 +46,26 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 
 data = np.random.randint(0, 50, size=(2, 100))    
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+data = np.random.randint(0, 100, size=(50, 2))
+plt.plot(data)
+plt.savefig('sample.png')
+
+
+import pandas as pd
+from fbprophet import Prophet
+_df = pd.read_csv('https://www.tepco.co.jp/forecast/html/images/juyo-2017.csv', encoding='shift-jis', skiprows=1)
+_df.head()
+_df.shape
+
+years = [2017, 2018, 2019]
+year = years[0]
+df = pd.DataFrame()
+for year in years:
+    _df = pd.read_csv(f'https://www.tepco.co.jp/forecast/html/images/juyo-{year}.csv', encoding='shift-jis', skiprows=1)
+    df = pd.concat([df, _df], axis=0)
