@@ -86,14 +86,29 @@ person.sya_nema()
 person.
 
 
+import pandas as pd
+from glob import glob
+filepaths_order = glob('sources/order_new/order*.xlsx')
+filepaths_order
+filepath = filepaths_order[0]
+
+df_order = pd.read_excel(filepath)
+df_order.to_dict().items()
+from collections import defaultdict
+order = defaultdict(int)
+
+for key, value in df_order.to_dict().items():
+    order[key] += value[0]
+#    print(key, value[0])
+order
+
+
 #tabula PDF⇒表を出力
 
 !pip install tabula-py
 
 import tabula
-tabula.environment_info()
 
-pdf_path = 'file:///Users/user/Desktop/09_%E5%A5%91%E7%B4%84%E6%B3%95%E5%8B%99%E3%83%8A%E3%83%AC%E3%83%83%E3%82%B7%E3%82%99%E3%83%9E%E3%83%8D%E3%82%B7%E3%82%99%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%81%B2%E3%81%AA%E5%9E%8B%E4%BD%9C%E6%88%90%E3%82%AB%E3%82%99%E3%82%A4%E3%83%88%E3%82%99.pdf'
+pdf_path = 'pdfのurlを記入'
 dfs = tabula.read_pdf(pdf_path, stream=True, pages= 'all')
-print(len(dfs))
 dfs（０）
