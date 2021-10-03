@@ -112,3 +112,7 @@ import tabula
 pdf_path = 'pdfのurlを記入'
 dfs = tabula.read_pdf(pdf_path, stream=True, pages= 'all')
 dfs（０）
+
+filepath_master = 'sources/master.xlsx'
+df_master = pd.read_excel(filepath_master)
+threshold = df_master.iloc[:1 , 1:]
