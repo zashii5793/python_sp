@@ -22,3 +22,5 @@ def extract(filepath):
     df['企業コード']　 = df.iloc[3, 4]
     return df
     
+
+df = extract(filepath)
