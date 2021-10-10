@@ -29,3 +29,4 @@ class Person:
         self.name = name
         self.nationality = nationality
         self.age = age
+#selfはインスタ自身を表している
