@@ -31,5 +31,6 @@ class Person:
         self.age = age
 
     def say_hello(self):
-        print(self.name)    
+        print(self.name) 
+           
 #selfはインスタ自身を表している
