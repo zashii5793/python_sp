@@ -24,6 +24,11 @@ def extract(filepath):
     
 df = extract(filepath)
 
+import pyautogui as pgui
+import time
+pgui.position()
+
+
 class Person:
     def __init__(self, name, nationality, age):
         self.name = name
@@ -32,5 +37,5 @@ class Person:
 
     def say_hello(self):
         print(self.name) 
-           
+
 #selfはインスタ自身を表している
