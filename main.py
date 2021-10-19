@@ -6,10 +6,10 @@ st.title('超入門')
 
 st.write('DataFrame')
 
-df = pd.DataFrame({
-    '1列目': [1, 2, 3, 4],
-    '2列目': [10, 20, 30, 40]
-})
+df = pd.DataFrame(
+    np.random.read(20, 3),
+    columns=['a', 'b', 'c']
+)
 
 #動的な表を作成したい場合
 st.dataframe(df.style.highlight_max(axis=0), width=100, height=100)
