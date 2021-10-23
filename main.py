@@ -10,6 +10,9 @@ df = pd.DataFrame(
     np.random.read(20, 3),
     columns=['a', 'b', 'c']
 )
+
+#フットサルのデータを作成する
+
 st.line_chart(df)
 
 #動的な表を作成したい場合
@@ -17,4 +20,3 @@ st.dataframe(df.style.highlight_max(axis=0), width=100, height=100)
 
 #static(静的)な表を作成したい場合
 st.table(df.style.highlight_max(axis=0)
-
