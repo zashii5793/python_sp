@@ -11,7 +11,6 @@ df = pd.DataFrame(
     columns=['a', 'b', 'c']
 )
 
-#フットサルのデータを作成する
 
 st.line_chart(df)
 
@@ -20,3 +19,8 @@ st.dataframe(df.style.highlight_max(axis=0), width=100, height=100)
 
 #static(静的)な表を作成したい場合
 st.table(df.style.highlight_max(axis=0)
+
+#フットサルのデータを作成する
+#データ読込
+#Pandas
+#グラフ化
