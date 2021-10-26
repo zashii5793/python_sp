@@ -24,3 +24,5 @@ st.table(df.style.highlight_max(axis=0)
 #データ読込
 #Pandas
 #グラフ化
+#Git
+
