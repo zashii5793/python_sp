@@ -7,7 +7,7 @@ st.title('超入門')
 st.write('DataFrame')
 
 df = pd.DataFrame(
-    np.random.read(20, 3),
+    np.random.read(20, 3, 5),
     columns=['a', 'b', 'c']
 )
 
