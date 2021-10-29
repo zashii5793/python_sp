@@ -1,3 +1,4 @@
+from pandas.io.formats import style
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -19,6 +20,8 @@ st.dataframe(df.style.highlight_max(axis=0), width=100, height=100)
 
 #static(静的)な表を作成したい場合
 st.table(df.style.highlight_max(axis=0)
+
+st.table(df,style)
 
 #フットサルのデータを作成する
 #データ読込
