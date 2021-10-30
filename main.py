@@ -20,8 +20,7 @@ st.dataframe(df.style.highlight_max(axis=0), width=100, height=100)
 
 #static(静的)な表を作成したい場合
 st.table(df.style.highlight_max(axis=0)
-
-st.table(df,style)
+st.table(df.style.highlight_max(axis=0)
 
 #フットサルのデータを作成する
 #データ読込
