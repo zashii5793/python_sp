@@ -17,7 +17,7 @@ st.line_chart(df)
 st.area_chart(df)
 
 
-
+st.write('test')
 
 
 #動的な表を作成したい場合
