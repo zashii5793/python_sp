@@ -20,10 +20,16 @@ st.area_chart(df)
 st.write('test')
 
 num = 0
+
 try:
-    print(10/num)
+    print(f'計算結果：{10/num}')
 except ZeroDivisionError as e:
     print(e)
+
+https://www.youtube.com/watch?v=DkqGC8Jf6Mc
+
+df = pd.read_csv('AAA')
+    
 
 
 #動的な表を作成したい場合
