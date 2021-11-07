@@ -29,6 +29,7 @@ except ZeroDivisionError as e:
 https://www.youtube.com/watch?v=DkqGC8Jf6Mc
 
 df = pd.read_csv('AAA')
+df.
     
 
 
