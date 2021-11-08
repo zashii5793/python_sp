@@ -29,8 +29,11 @@ except ZeroDivisionError as e:
 https://www.youtube.com/watch?v=DkqGC8Jf6Mc
 
 df = pd.read_csv('AAA')
-df.
-    
+df2 = pd.read_csv('AAA')
+
+#先頭3行目
+df.head(3)
+df.tail(10)
 
 
 #動的な表を作成したい場合
