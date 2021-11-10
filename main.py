@@ -35,6 +35,14 @@ df2 = pd.read_csv('AAA')
 df.head(3)
 df.tail(10)
 
+df.columns
+
+df[['A',
+'B'
+'C'
+'D'
+]][1:]
+
 
 #動的な表を作成したい場合
 st.dataframe(df.style.highlight_max(axis=0), width=100, height=100)
